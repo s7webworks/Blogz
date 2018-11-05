@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+<body>
+
+<div>
+<form>
+    <a href="/blog" id="menuBlog" class="topMenuItem">Main Blog Page</a>
+    <a href="/newpost" id="menuAddNew" class="topMenuItem">Add a Blog Entry</a>
+    
+</form>
+   <span>
+
+   </span>
+</div>
+    {% block content %}
+    {% endblock content %}
+    {% block new_blog_content %}
+    {% endblock new_blog_content %}
+
+</body>
+</html>

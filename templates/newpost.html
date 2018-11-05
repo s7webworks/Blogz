@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block new_blog_content %}
+<h1 id="headline">Build A Blog!</h1>
+<form method='post'>
+   
+    <div id="headline"> <span id="headlineSpan">Add a Blog Entry</span></div>
+    <br/>
+
+    <div id="titleDiv">
+        <label>
+        <span id="blogTitle">Title for your new blog:</span>
+        <input type="text" name='new_btitle' />
+    </label>
+<br/>    
+</div>
+     <div id="blogText">
+         <label>
+             <span id="blogTextBox">Your new blog:</span>
+             <input type="text_area" rows="4" cols="50" name='new_bpost' />             
+            </label>
+     </div>   
+    <input type="submit" value='Add Entry' />
+</form>
+
+{% endblock new_blog_content %}
