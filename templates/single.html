@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles.css')}}"> 
+{% endblock style %}
+
+{% block content %}
+<div id="blogTitle">
+    
+</div>
+<!-- <div id="blogArea"> -->
+<hr/>
+<div id="singlePost">
+
+    <span id="blogTitleHeader">{{blogs.btitle}}</span>
+    <hr/>
+       
+        <span>{{blogs.bpost}}</span>
+  </p>
+ 
+    
+  
+</div>
+<!-- </div> -->
+{% endblock content %}

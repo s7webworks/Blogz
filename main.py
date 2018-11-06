@@ -1,5 +1,5 @@
 
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -16,24 +16,39 @@ class Blog(db.Model):
     bpost = db.Column(db.String(400))
     
     def __init__(self, btitle, bpost):
-        self.name = btitle
+        self.btitle = btitle
         self.bpost = bpost
 
 @app.route('/newpost', methods=['GET', 'POST'])
-def newpost():
+def newpost(): 
+    
+    blogs = Blog.query.all()
+    
     if request.method == 'POST':
         new_btitle = request.form['new_btitle']
         new_bpost = request.form['new_bpost']
         new_blog = Blog(new_btitle, new_bpost)
         db.session.add(new_blog)
         db.session.commit()
+        return redirect("/")
         
-
-    blogs = Blog.query.all()
     return render_template("newpost.html", blogs=blogs)
 
-@app.route('/blog', methods=['GET', 'POST'])
+        
+
+    
+    
+
+@app.route('/blog')
 def blog():
+    blog_id = request.args.get('blog_id')
+    
+
+    if blog_id != None:
+        blog_id = int(blog_id)
+        blogs = Blog.query.get(blog_id)
+        return render_template('single.html', blogs=blogs)
+
     blogs = Blog.query.all()
     return render_template('blog.html', blogs=blogs )
 

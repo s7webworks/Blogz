@@ -2,18 +2,24 @@
 <html>
     <head>
         <title>{{title}}</title>
+        {% block style %}{% endblock %}
+
     </head>
 <body>
 
 <div>
 <form>
-    <a href="/blog" id="menuBlog" class="topMenuItem">Main Blog Page</a>
+    <div id="menuStyle">
+    <a href="/blog" id="menuBlog" class="topMenuItem" class="styleMenu">Main Blog Page</a>
     <a href="/newpost" id="menuAddNew" class="topMenuItem">Add a Blog Entry</a>
-    
+    </div>
 </form>
-   <span>
+   
+</div>
+<hr/>
+<div id="title">
+<span class="headline">Build a Blog!</span>
 
-   </span>
 </div>
     {% block content %}
     {% endblock content %}
