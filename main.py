@@ -1,6 +1,7 @@
 
 from flask import Flask, request, redirect, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
+import time
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -14,10 +15,12 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     btitle = db.Column(db.String(120))
     bpost = db.Column(db.String(400))
-    
-    def __init__(self, btitle, bpost):
+    btime = db.Column(db.String(200))
+
+    def __init__(self, btitle, bpost, btime):
         self.btitle = btitle
         self.bpost = bpost
+        self.btime = btime
 
 @app.route('/newpost', methods=['GET', 'POST'])
 def newpost(): 
@@ -27,7 +30,8 @@ def newpost():
     if request.method == 'POST':
         new_btitle = request.form['new_btitle']
         new_bpost = request.form['new_bpost']
-        new_blog = Blog(new_btitle, new_bpost)
+        post_time = str(time.asctime())
+        new_blog = Blog(new_btitle, new_bpost, post_time)
         db.session.add(new_blog)
         db.session.commit()
         return redirect("/")

@@ -1,11 +1,7 @@
 body{
     color: #000;
-    background: -moz-linear-gradient(top, rgba(30,87,153,1) 1%, rgba(30,87,153,0.98) 2%, rgba(244,244,244,0.33) 42%, rgba(247,247,247,0.2) 50%, rgba(252,252,252,0.41) 63%, rgba(33,106,178,0.98) 99%, rgba(33,106,178,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(30,87,153,1) 1%,rgba(30,87,153,0.98) 2%,rgba(244,244,244,0.33) 42%,rgba(247,247,247,0.2) 50%,rgba(252,252,252,0.41) 63%,rgba(33,106,178,0.98) 99%,rgba(33,106,178,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(30,87,153,1) 1%,rgba(30,87,153,0.98) 2%,rgba(244,244,244,0.33) 42%,rgba(247,247,247,0.2) 50%,rgba(252,252,252,0.41) 63%,rgba(33,106,178,0.98) 99%,rgba(33,106,178,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#216ab2',GradientType=0 ); /* IE6-9 */
-background-repeat: none;
-height: 100%;
+   
+    background-color: gray;
 
 }
 .headline{
@@ -23,6 +19,9 @@ height: 100%;
     margin: 50px auto;
     padding: 10px;
     border: 2px black solid;
+    background-color: white;
+    border-radius: 10px;
+
 
 
 }
@@ -36,25 +35,64 @@ height: 100%;
     color: #fff;
     
 }
+#blogTitleText{
+    font-size: 2em;
+    color: black;
+}
+#singlePostText{
+    font-size: 2em;
+    padding-left: 10px;
 
+}
+#blogtime{
+    font-size: 1em;
+    color:brown;
+    
+    padding-left: 25px;
+
+}
+#menuStyle a {
+    text-decoration: none;
+    padding: 5px;
+    color: yellow;
+    font-size: 1.5em;
+    text-shadow: 10px 10px 4px rgba(150, 150, 150, 1);
+
+}
 .styleMenu, a {
     text-decoration: none;
     padding: 5px;
-    color: #333;
+    color: green;
+    font-size: 1.5em;
+    text-shadow: 10px 10px 4px rgba(150, 150, 150, 1);
+
     
 
+}
+#blogTitle{
+    font-size:1.5em;
+    padding-right: 20px;
+
+
+}
+#blogTextBox{
+    font-size:1.5em;
+    padding-right: 20px;
 }
 #blogTitleHeader {
     font-size: 2em;
     text-align: center;
     padding-top:10px;
+    padding-left:25px;
     padding-bottom: 15px;
-    color: orange;
+    color: darkgreen;
+    text-shadow: 10px 10px 4px rgba(150, 150, 150, 1);
 }
 a:hover {
-    transform: 3s;
+    transition: 1s;
     font-size: 2em;
-    color: yellow;
+    color: red;
+    text-shadow: 10px 10px 4px rgba(150, 150, 150, 1);
 
 
 }
@@ -67,6 +105,16 @@ a:hover {
     background-color: #fff;
     padding-bottom: 50px;
     margin: 0 auto;
+    border-radius:10px;
 
+
+
+}
+#menuStyle a:hover {
+
+    transition:1s;
+    font-size: 2em;
+    color: red;
+    text-shadow: 10px 10px 4px rgba(150, 150, 150, 1);
 
 }
