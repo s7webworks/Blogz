@@ -1,0 +1,23 @@
+
+
+
+    {% extends "base.html" %}
+{% block style %}
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles.css')}}"> 
+{% endblock style %}
+
+{% block content %}
+<div id="blogTitle">
+    <span id="blogTitleHeader">Visitors</span>
+</div>
+<div id="blogArea">
+<hr/>
+<div id="pastPosts">
+{% for user in users %}
+    <p class="users"><a href="/blog?userid={{user.id}}"> {{ user.username }}</a></p>
+ 
+   {% endfor %}  
+  
+</div>
+</div>
+{% endblock content %}

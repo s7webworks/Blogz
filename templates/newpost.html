@@ -14,17 +14,22 @@
     <div id="titleDiv">
         <label>
         <span id="blogTitle">Title for your new blog:</span>
-        <input type="text" name='new_btitle' />
+        <input type="text" name='title' value='{{blog_title}}' placeholder="Your Title Here" />
+        <p class="error">{{title_error}}</p><br><br>
+
     </label>
 <br/>    
 </div>
      <div id="blogText">
          <label>
              <span id="blogTextBox">Your new blog:</span>
-             <input type="text_area" rows="4" cols="50" name='new_bpost' />             
+             <textarea type="text" name="body" placeholder="Your Text Here">{{blog_body}}</textarea>
+             <p class="error">{{body_error}}</p><br>
+
             </label>
      </div>   
-    <input type="submit" value='Add Entry' />
+    <input type="submit" value='Post' />
 </form>
 </div>
 {% endblock new_blog_content %}
+

@@ -5,20 +5,23 @@
 
 {% block content %}
 <div id="blogTitle">
-    <span id="blogTitleHeader">{{btitle}}</span>
+    <span id="blogTitleHeader">{{title}}</span>
 </div>
 <div id="blogArea">
 <hr/>
 <div id="pastPosts">
-{% for blog in blogs %}
+{% for post in posts %}
     <p>
-       <a href="http://127.0.0.1:5000/blog?blog_id={{blog.id}}" >{{blog.btitle}}</a>
+       <a href="/blog?id={{post.id}}"><p><h2>{{post.title}}</h2></p></a>
+       <p class="body-text">{{ post.body }}</p>
+       <p class="pub-date">Posted on: {{ post.pub_date }}</p>
+       <p class="user">Posted by: <a href="/blog?userid={{post.owner_id}}">{{ post.owner.username }}</a></p>
        <br/>
        
        
-        <span>{{blog.bpost}}</span>
         
-        <span id="blogtime">{{blog.btime}}</span>
+        
+        
 
   </p>
  

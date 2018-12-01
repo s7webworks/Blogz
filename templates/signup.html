@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles.css')}}"> 
+{%endblock style %}
+
+{% block new_blog_content %}
+
+<div id="pastPosts">
+<form method='post'>
+   
+    <div id="headline"> <span id="blogTitleHeader">Register to Blogz</span></div>
+    <br/>
+
+    <div id="titleDiv">
+        <label>
+        <span id="blogTitle">Username (email address):</span>
+        <input type="text" name='username' value="{{ username }}" placeholder="Username">
+        <p class="error">{{ username_error }}{{ exist_error }}</p>
+    </label>
+<br/>    
+</div>
+     <div id="blogText">
+         <label>
+             <span id="blogTextBox">Password:</span>
+             <input type="password" name='password' value="{{ password }}" placeholder="Password">
+             <p class="error">{{ password_error }}</p>             
+            </label>
+            <label>
+             <span id="blogTextBox"> Verify Password:</span>
+             <input type="password" name='verify' value="{{ verify }}" placeholder="Verify Password">
+             <p class="error">{{ verify_error }}</p>             
+             </label>
+     </div>   
+    <input type="submit" value='Sign up' />
+</form>
+</div>
+{% endblock new_blog_content %}

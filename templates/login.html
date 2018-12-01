@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block style %}
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='styles.css')}}"> 
+{%endblock style %}
+
+{% block new_blog_content %}
+
+<div id="pastPosts">
+<form method='post'>
+   
+    <div id="headline"> <span id="blogTitleHeader">Login to Blogz</span></div>
+    <br/>
+    <p><span id="loginMOTD">Hello! Welcome to S7Webworks Blog page! Please login below or
+        <a href="/signup">register here</a> for a new account.
+    </span></p>
+
+    <div id="titleDiv">
+        <label>
+        <span id="blogTitle">Username (email address):</span>
+        <input type="text" name='username' />
+    </label>
+<br/>    
+</div>
+     <div id="blogText">
+         <label>
+             <span id="blogTextBox">Password:</span>
+             <input type="password" name='password' />             
+            </label>
+     </div>   
+    <input type="submit" value='Login' />
+</form>
+</div>
+{% endblock new_blog_content %}
