@@ -12,7 +12,7 @@
     <div id="menuStyle">
     <a href="/blog" id="menuBlog" class="topMenuItem" class="styleMenu">Main Blog Page</a>
     <a href="/newpost" id="menuAddNew" class="topMenuItem">Add a Blog Entry</a>
-  {% if session != "" %}
+  {% if session %}
     <a href="/logout" id="menuLogout" class="topMenuItem">Logout</a>
   {% else %}
     <a href="/login" id="menuLogin" class="topMenuItem">Login</a>
